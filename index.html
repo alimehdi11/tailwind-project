@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./style.css" rel="stylesheet" />
+      <!-- google fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Mozilla+Headline:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font icon cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+ <body
+    class="bg-gradient-to-bl from-gray-100  to-gray-300 dark:from-gray-800 dark:to-gray-900 duration-400 flex justify-center items-center min-h-screen font-['Roboto',sans-serif;]"
+  >
+    <div
+    id="homescreen"
+      class="bg-white dark:bg-gray-900 w-full  max-w-[910px] p-10 rounded-xl flex flex-col items-center text-center gap-8"
+    >
+      <i class="fa-solid fa-brain text-blue-700 text-5xl"></i>
+      <h1
+        class="bg-gradient-to-r from-violet-500 to-fuchsia-500 font-bold text-4xl text-transparent bg-clip-text"
+      >
+        QuizMaster Pro
+      </h1>
+      <p class="text-gray-500">
+        Test your knowledge with our premium quiz experience. Challenge yourself
+        with timed questions and track your progress.
+      </p>
+      <div class="flex gap-2 flex-wrap">
+        <div
+          class="bg-gray-100 p-5 px-10 rounded-md hover:shadow-md hover:-translate-y-2 duration-300 w-[270px]"
+        >
+          <i class="fa-solid fa-alarm-clock text-3xl text-blue-700"></i>
+          <h1 class="text-xl font-bold my-2">Timed Questions</h1>
+          <p>60 seconds per question</p>
+        </div>
+
+        <div
+          class="bg-gray-100 p-5 px-10 rounded-md hover:shadow-md hover:-translate-y-2 duration-300 w-[270px]"
+        >
+          <i class="fa-solid fa-chart-line text-3xl text-blue-700"></i>
+          <h1 class="text-xl font-bold my-2">Track Progress</h1>
+          <p>See your results</p>
+        </div>
+
+        <div
+          class="bg-gray-100 p-5 px-10 rounded-md hover:shadow-md hover:-translate-y-2 duration-300 w-[270px]"
+        >
+          <i
+            class="fa-solid fa-mobile-screen-button text-3xl text-blue-700"
+          ></i>
+          <h1 class="text-xl font-bold my-2">Responsive</h1>
+          <p>On any device</p>
+        </div>
+      </div>
+      <button
+      id="startBtn"
+        class="bg-pink-600 py-2 cursor-pointer px-7 font-bold text-lg text-white rounded-full"
+      >
+        Start Quize
+      </button>
+      <!-- Toggle Switch -->
+      <label class="relative flex items-center cursor-pointer">
+        <input type="checkbox" id="darkToggle" class="hidden peer" />
+        <div
+          class="w-11 h-6 bg-gray-300 rounded-full peer-checked:bg-blue-600 duration-300"
+        ></div>
+        <div
+          class="absolute left-0.5 w-5 h-5 bg-white rounded-full duration-300 peer-checked:left-[21px]"
+        ></div>
+        <span class="ml-3 text-xl text-gray-900">Dark Mode</span>
+      </label>
+    </div>
+    <!-- MCQs PAGE -->
+    <div
+id="mcqsscreen"
+      class="bg-gradient-to-bl from-gray-100  to-gray-200 dark:from-gray-800 dark:to-gray-900 w-full max-w-[910px] overflow-hidden hidden rounded-xl"
+    >
+      <div class="bg-blue-600 text-white w-full py-5 px-4 ">
+        <h1>Question <span class="question-number"></span>/<span id="totalquestions"></span></h1>
+      </div>
+      <div class="px-10 space-y-4 py-8">
+      <div class="bg-gray-300 h-3 rounded-md overflow-hidden">
+         <div id="progress" class="w-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  h-full "></div>
+      </div>
+      <h1 class="text-gray-600 text-[15px]">Question <span class="question-number"></span>:</h1>
+       <h1 class="text-[25px] font-bold my-2" id="questiontitle"></h1>
+         <ul class="space-y-4" id="optionslist">
+
+       </ul>
+       <div class="flex justify-between ">
+         <button class="py-2 px-8 text-blue-700 cursor-pointer font-bold rounded-full border border-blue-700" id="prevbtn">Previous</button>
+         <button class="bg-blue-700 py-2 px-8 text-white font-bold cursor-pointer rounded-full" id="nextbtn">Next</button>
+         <button class="bg-blue-700 py-2 px-8 text-white font-bold cursor-pointer rounded-full hidden" id="submitbtn">Submit</button>
+        </div>
+        </div>
+  </div>
+  <!-- SUBMIT PAGE -->
+   <div  class="bg-gradient-to-bl from-gray-100  to-gray-200 dark:from-gray-800 dark:to-gray-900 w-full hidden max-w-[910px] overflow-hidden space-y-5 pb-6 rounded-xl font-bold">
+     <div class="bg-blue-600 text-white w-full py-5 px-4 ">
+        <h1 class=" text-2xl text-white">Quiz Reasult</h1>
+      </div>
+      <h1 class="text-2xl  text-center">Your Score</h1>
+      <h1 class=" text-5xl text-purple-500 text-center">0/5</h1>
+      <div class="quiz-answer ">
+        <div class="p-5 rounded-md space-y-3">
+          <h1 class=" text-lg">Question 1: What is the capital of France?</h1>
+          <p class="text-gray-600">Your Answer: London</p>
+          <p class="text-green-600">Correct Answer: Paris</p>
+        </div>
+
+        <div class="p-5 rounded-md space-y-3">
+          <h1 class=" text-lg">Question 2: What is 2 + 2?</h1>
+          <p class="text-gray-600">Your Answer: 3</p>
+          <p class="text-green-600">Correct Answer: 4</p>
+        </div>
+
+        <div class="p-5 rounded-md space-y-3">
+          <h1 class=" text-lg">Question 3: What is the largest planet in our solar system?</h1>
+          <p class="text-gray-600">Your Answer: Earth</p>
+          <p class="text-green-600">Correct Answer: Jupiter</p>
+      </div>
+      <button class="bg-blue-700 py-2 px-8 text-white font-bold cursor-pointer rounded-full mx-auto  block">Try Again</button>
+   </div>>
+<script src="./script.js"></script>
+  </body>
+</html>
