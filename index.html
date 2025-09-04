@@ -96,9 +96,7 @@ id="mcqsscreen"
       </div>
       <h1 class="text-gray-600 text-[15px]">Question <span class="question-number"></span>:</h1>
        <h1 class="text-[25px] font-bold my-2" id="questiontitle"></h1>
-         <ul class="space-y-4" id="optionslist">
-
-       </ul>
+         <ul class="space-y-4" id="optionslist"></ul>
        <div class="flex justify-between ">
          <button class="py-2 px-8 text-blue-700 cursor-pointer font-bold rounded-full border border-blue-700" id="prevbtn">Previous</button>
          <button class="bg-blue-700 py-2 px-8 text-white font-bold cursor-pointer rounded-full" id="nextbtn">Next</button>
@@ -107,32 +105,15 @@ id="mcqsscreen"
         </div>
   </div>
   <!-- SUBMIT PAGE -->
-   <div  class="bg-gradient-to-bl from-gray-100  to-gray-200 dark:from-gray-800 dark:to-gray-900 w-full hidden max-w-[910px] overflow-hidden space-y-5 pb-6 rounded-xl font-bold">
+   <div  class="bg-gradient-to-bl from-gray-100  to-gray-200 dark:from-gray-800 dark:to-gray-900 w-full hidden max-w-[910px] overflow-hidden space-y-5 pb-6 rounded-xl font-bold" id="resultscreen">
      <div class="bg-blue-600 text-white w-full py-5 px-4 ">
         <h1 class=" text-2xl text-white">Quiz Reasult</h1>
       </div>
       <h1 class="text-2xl  text-center">Your Score</h1>
-      <h1 class=" text-5xl text-purple-500 text-center">0/5</h1>
-      <div class="quiz-answer ">
-        <div class="p-5 rounded-md space-y-3">
-          <h1 class=" text-lg">Question 1: What is the capital of France?</h1>
-          <p class="text-gray-600">Your Answer: London</p>
-          <p class="text-green-600">Correct Answer: Paris</p>
-        </div>
-
-        <div class="p-5 rounded-md space-y-3">
-          <h1 class=" text-lg">Question 2: What is 2 + 2?</h1>
-          <p class="text-gray-600">Your Answer: 3</p>
-          <p class="text-green-600">Correct Answer: 4</p>
-        </div>
-
-        <div class="p-5 rounded-md space-y-3">
-          <h1 class=" text-lg">Question 3: What is the largest planet in our solar system?</h1>
-          <p class="text-gray-600">Your Answer: Earth</p>
-          <p class="text-green-600">Correct Answer: Jupiter</p>
+      <h1 class=" text-5xl text-purple-500 text-center"><span id="score">0/5</span></h1>
+      <div id="quiz-answers">
       </div>
-      <button class="bg-blue-700 py-2 px-8 text-white font-bold cursor-pointer rounded-full mx-auto  block">Try Again</button>
-   </div>>
+      <button class="bg-blue-700 py-2 px-8 text-white font-bold cursor-pointer rounded-full mx-auto  block" id="again">Try Again</button>
 <script src="./script.js"></script>
   </body>
 </html>
